@@ -40,5 +40,12 @@ export default function solution(content){
   console.log(`победы ${Math.round(white/slice.length * 100)}%`);
   console.log(`поражения ${Math.round(black/slice.length * 100)}%`);
   console.log(`ничья ${Math.round(draw/slice.length * 100)}%`);
+
+  const winners = map.filter((row) => row[4] !== 'Draw');
+  const search = winners.filter((row) => (row[4] === 'White' && Number(row[7]) < Number(row[9])) || (row[4] === 'Black' && Number(row[7]) > Number(row[9])));
+  console.log(search.length);
+
+ 
+
   // END
 }
